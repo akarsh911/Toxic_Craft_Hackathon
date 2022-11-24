@@ -17,7 +17,11 @@ if (isset($_GET["req"])) {
         include('../html/user_gas_department.html');
     } else if ($req == "app_user_emergency_menu") {
         include('../html/user_emergency_services.html');
-    } else if ($req == "app_queries") {
+    } 
+    else if ($req == "app_user_garbage_menu") {
+        include('../html/user_garbage.html');
+    } 
+    else if ($req == "app_queries") {
         include('../html/about_us.html');
     } else if ($req == "app_user_street_lamp_complaint") {
 

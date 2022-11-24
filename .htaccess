@@ -10,3 +10,6 @@ AddHandler server-parsed .html .htm
   RewriteRule ^dashboard$ /php/dashboard_index.php [NC,L]
   RewriteRule ^([a-zA-Z0-9_-]*)$ index.php?type=$1 [NC,C]
 </IfModule>
+<IfModule mod_headers.c>
+   Header set P3P "policyref=\"/w3c/p3p.xml\", CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\""
+ </IfModule>

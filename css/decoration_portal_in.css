@@ -5,6 +5,8 @@
     padding: 10px;
     background-color: rgb(239, 239, 106);
     width: 90%;
+    z-index: 10001;
+    position: relative;
 
 }
 
@@ -15,11 +17,13 @@
     padding: 20px;
     padding-bottom: -30px;
     background-color: rgb(83, 207, 51);
-    width: 88.5%;
+    width: 88.78%;
+    z-index: 10001;
+    position: relative;
 
 }
 
-.instructions3nd {
+.instructions3rd {
     border-radius: 30px 30px 30px 30px;
     margin-top: -20px;
     margin-top: -10px;
@@ -27,5 +31,7 @@
     padding-bottom: -30px;
     background-color: rgb(230, 76, 76);
     width: 30%;
+    z-index: 10001;
+    position: relative;
 
 }

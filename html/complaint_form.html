@@ -21,18 +21,15 @@
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
       </div>
     </div>
-    <p id="form">Upload an image of the problem:<div class=""><form action="/action_page.php">
-      <input type="file" id="myFile" name="filename"></p>
-
-  
-  
-  </form>
+    <p>Upload an image of the problem:
+      <input type="file" id="myFile" name="filename">
+    </p>
     <div class="mapsize">
-    <div id="map-canvas" ></div>
-  </div>
+      <div id="map-canvas"></div>
+    </div>
     <input type="text" class="form-control input-sm" style="display:none;" name="lat" id="lat">
     <input type="text" class="form-control input-sm" style="display:none;" name="lng" id="lng">
-    
+
     <div class="row">
       <input type="submit" value="Submit">
     </div>
@@ -45,7 +42,11 @@
 
 <script>
   var lati, lngi;
-  getLocation();
+  window.addEventListener("load", (event) => {
+    getLocation();
+  });
+
+
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);

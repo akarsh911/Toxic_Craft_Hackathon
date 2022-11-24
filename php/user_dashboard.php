@@ -43,6 +43,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_elec_meter_complaint") {
         session_start();
         echo "Electrical Department-Electrical Meter Complaint";
@@ -51,6 +53,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_fire_complaint") {
         session_start();
         echo "Emergency Services-Fire";
@@ -59,6 +63,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_medical_complaint") {
         session_start();
         echo "Emergency Services- Medical";
@@ -67,6 +73,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_police_complaint") {
 
         session_start();
@@ -76,6 +84,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_meter_issues_complaint") {
         session_start();
         echo "Gas Services- Meter Issues";
@@ -84,6 +94,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_leakage_complaint") {
         session_start();
         echo "Gas Services- Leakage";
@@ -92,6 +104,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_road_maintain_complaint") {
         session_start();
         echo "Road-Road Maintain ";
@@ -100,6 +114,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_potholes_complaint") {
         session_start();
         echo "Road- Potholes";
@@ -108,6 +124,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_new_connection_complaint") {
         session_start();
         echo "Sewage- New Connection";
@@ -116,6 +134,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_maintenance_complaint") {
         session_start();
         echo "Sewage-Maintenance";
@@ -124,6 +144,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_new_water_connection_complaint") {
         session_start();
         echo "Water - New Water Connection";
@@ -132,6 +154,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_water_connection_maintenance_complaint") {
         session_start();
         echo "Water -Water Connection Maintenance";
@@ -140,6 +164,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_litter_complaint") {
         session_start();
         echo "Garbage-litter";
@@ -148,6 +174,8 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_garbage_pickup_complaint") {
         session_start();
         echo "Garbage-garbage pickup";
@@ -156,5 +184,7 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     }
 }

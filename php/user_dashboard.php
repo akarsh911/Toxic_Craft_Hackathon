@@ -5,6 +5,7 @@ if (isset($_GET["req"])) {
     if ($req == "app_dashboard") {
         virtual('../html/user_dashboard.html');
     } else if ($req == "app_complaints") {
+        virtual('../html/user_complaints.html');
     } else if ($req == "app_profile") {
     } else if ($req == "app_notifications") {
     } else if ($req == "app_user_elec_menu") {

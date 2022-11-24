@@ -20,13 +20,13 @@ if (isset($_GET["req"])) {
     } else if ($req == "app_queries") {
         include('../html/about_us.html');
     } else if ($req == "app_user_street_lamp_complaint") {
-        include('../html/complaint_form.html');
+
         session_start();
         $_SESSION["dep"] = "Electrical";
         $_SESSION["cat"] = "Street Lamp";
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
-        
+        include('../html/complaint_form.html');
     } else if ($req == "app_user_house_power_supply_complaint") {
     } else if ($req == "app_user_elec_meter_complaint") {
     } else if ($req == "app_user_fire_complaint") {

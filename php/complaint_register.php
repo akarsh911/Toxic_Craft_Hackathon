@@ -1,6 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/php/database_connect.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/php/notification_mails.php");
+
 function new_complaint($dep, $cat, $user_id, $title, $descrip, $resource_url, $xcord, $ycord)
 {
     $comp_no = gen_comp_id($dep, $cat);
@@ -181,6 +182,31 @@ function unassign_complaint($emp_code, $emp_type)
         return "1";
     } else {
         return "Error: " . $sql . "<br>" . $conn->error;
+    }
+    closeCon($conn);
+}
+function complaints_user($user_id)
+{
+
+    $conn = openCon();
+    $sql = "SELECT department,category,title,x-cord,y-cord,descrip,assigned_id,complaint_date,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE user_id='$user_id' ;";
+    $result = $conn->query($sql);
+    if (!$result) {
+        echo ("Error description: " . $conn->error);
+    }
+    $all_comps=array();$count=0;
+    if ($result->num_rows > 0) {
+      
+        while ($row = $result->fetch_assoc()) {
+            $count++;   
+            $all_comps[$count]=$row;  
+        }
+        $myJSON = json_encode($all_comps);
+        echo "<script> sessionStorage.setItem('err_data', `" . json_encode($myJSON, JSON_PRETTY_PRINT) . "`);</script>";
+        echo '<script>window.onload = (event) => {location.replace("../html/onboard.html")};</script>';
+        
+    } else {
+        return 0;
     }
     closeCon($conn);
 }

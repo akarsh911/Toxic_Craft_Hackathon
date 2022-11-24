@@ -25,18 +25,18 @@ if ($resp == 0) {
     if (check_email_verify($username) == 0) {
         session_start();
         $_SESSION["email"] = $username;
-        
+
         $err = array();
         $err["val"] = "email_verify";
         echo "<script> sessionStorage.setItem('type', `" . json_encode($err, JSON_PRETTY_PRINT) . "`);</script>";
         echo "<script> sessionStorage.setItem('email', `" . $username . "`);</script>";
-       echo '<script>window.onload = (event) => {location.replace("../verify")};</script>';
+        echo '<script>window.onload = (event) => {location.replace("../verify")};</script>';
     } else {
         $id = gen_uuid();
         if (logout($username) == 1) {
             logout($username);
             logged_in($resp, $username, $id);
-            
+
             //echo "<script> localStorage.setItem('dashboard_data', `" . json_encode($err, JSON_PRETTY_PRINT) . "`);</script>";
             echo "<script>setcookie('key','" . $id . "', 15)</script>";
             echo '<script>window.onload = (event) => {location.replace("../dashboard")};</script>';

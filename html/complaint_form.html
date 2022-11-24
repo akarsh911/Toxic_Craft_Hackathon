@@ -1,4 +1,4 @@
-<link href="../css/complaintform.css" rel="stylesheet" />
+<link href="../css/complaint_form.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAprQv_1poHHjDfhRmJ3j742-JRWCfAF7o&libraries=places"
   type="text/javascript">
@@ -21,9 +21,12 @@
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
       </div>
     </div>
-    <div id="map-canvas"></div>
+    <div class="mapsize">
+    <div id="map-canvas" ></div>
+  </div>
     <input type="text" class="form-control input-sm" style="display:none;" name="lat" id="lat">
     <input type="text" class="form-control input-sm" style="display:none;" name="lng" id="lng">
+    
     <div class="row">
       <input type="submit" value="Submit">
     </div>

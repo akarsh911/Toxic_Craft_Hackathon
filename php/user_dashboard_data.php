@@ -1,4 +1,5 @@
 <?php
-function get_name()
+function get_name($user_mail)
 {
+    
 }

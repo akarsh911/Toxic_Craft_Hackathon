@@ -75,7 +75,7 @@ if ($err == 0) {
 
     $resp = "";
     if ($resp = create_user($email, $f_name, $l_name, $ph_no, $psw) == 1) {
-
+        echo '<script>alert("id created login now!");</script>';
         echo '<script>window.onload = (event) => {location.replace("../login")};</script>';
         //TODO: redirect to login page with message
 

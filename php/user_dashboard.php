@@ -20,7 +20,7 @@ if (isset($_GET["req"])) {
     } else if ($req == "app_queries") {
         include('../html/about_us.html');
     }
-    else if ($req == "app_user_street_complaint") {
+    else if ($req == "app_user_street_lamp_complaint") {
         
     } 
     else if ($req == "app_user_house_power_supply_complaint") {

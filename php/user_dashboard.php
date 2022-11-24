@@ -18,23 +18,21 @@ if (isset($_GET["req"])) {
         include('../html/user_gas_department.html');
     } else if ($req == "app_user_emergency_menu") {
         include('../html/user_emergency_services.html');
-    } 
-    else if ($req == "app_user_garbage_menu") {
+    } else if ($req == "app_user_garbage_menu") {
         include('../html/user_garbage.html');
-    } 
-    else if ($req == "app_queries") {
+    } else if ($req == "app_queries") {
         include('../html/about_us.html');
     } else if ($req == "app_user_street_lamp_complaint") {
 
         session_start();
         echo "Electrical Department- Damaged Street Lamp";
-        $_COOKIE["dep"] = "Electrical";
-        $_COOKIE["cat"] = "Street Lamp";
+        $_SESSION["dep"] = "Electrical";
+        $_SESSION["cat"] = "Street Lamp";
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
         echo "<script src='../js/change_comp.js'></script>";
-        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','Electrical','light');</script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_house_power_supply_complaint") {
         session_start();
         echo "Electrical Department-House Power Supply";
@@ -140,8 +138,7 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
-    }
-    else if ($req == "app_user_litter_complaint") {
+    } else if ($req == "app_user_litter_complaint") {
         session_start();
         echo "Garbage-litter";
         $_SESSION["dep"] = "Garbage";
@@ -149,8 +146,7 @@ if (isset($_GET["req"])) {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
-    }
-    else if ($req == "app_user_garbage_pickup_complaint") {
+    } else if ($req == "app_user_garbage_pickup_complaint") {
         session_start();
         echo "Garbage-garbage pickup";
         $_SESSION["dep"] = "Garbage";

@@ -1,7 +1,9 @@
 <?php
-$user_id = $_SESSSION["user_id"];
-$dep = $_SESSSION["dep"];
-$cat = $_SESSSION["cat"];
+header('P3P: CP="CAO PSA OUR"');
+session_start();
+$user_id = $_GET["user_id"];
+$dep = $_GET["dep"];
+$cat = $_GET["cat"];
 $title = $_POST["title"];
 $desc = $_POST["description"];
 $file = $_POST["file"];

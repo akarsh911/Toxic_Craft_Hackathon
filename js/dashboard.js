@@ -36,3 +36,7 @@ document.addEventListener("click", function (evt) {
     // This is a click outside.
     nav_open();
 });
+var data = JSON.parse(localStorage.getItem("dashboard_data"));
+document.getElementById("name").textContent = data.name;
+document.getElementById("name2").textContent = data.name;
+document.getElementById("desig").textContent = data.desig + " ," + data.dep;

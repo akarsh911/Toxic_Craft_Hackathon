@@ -36,8 +36,8 @@ if ($resp == 0) {
         if (logout($username) == 1) {
             logout($username);
             logged_in($resp, $username, $id);
-
-            //echo "<script> localStorage.setItem('dashboard_data', `" . json_encode($err, JSON_PRETTY_PRINT) . "`);</script>";
+            require_once('../php/user_dashboard_data.php');
+            echo "<script> localStorage.setItem('dashboard_data', `" . create_json_data($username) . "`);</script>";
             echo "<script>setcookie('key','" . $id . "', 15)</script>";
             echo '<script>window.onload = (event) => {location.replace("../dashboard")};</script>';
         }

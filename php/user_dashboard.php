@@ -7,7 +7,7 @@ if (isset($_GET["req"])) {
     } else if ($req == "app_complaints") {
         virtual('../html/user_complaints.html');
     } else if ($req == "app_profile") {
-        virtual('../html/profile.html');
+        include('../html/profile.html');
     } else if ($req == "app_notifications") {
     } else if ($req == "app_user_elec_menu") {
         include('../html/user_electrical_department.html');

@@ -102,21 +102,35 @@ if (isset($_GET["req"])) {
         include('../html/complaint_form.html');
     } else if ($req == "app_user_new_connection_complaint") {
         session_start();
-        echo "- Damaged Street Lamp";
-        $_SESSION["dep"] = "Electrical";
-        $_SESSION["cat"] = "Street Lamp";
+        echo "Sewage- New Connection";
+        $_SESSION["dep"] = "Sewage";
+        $_SESSION["cat"] = "New Connection";
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
     } else if ($req == "app_user_maintenance_complaint") {
         session_start();
-        echo "- Damaged Street Lamp";
-        $_SESSION["dep"] = "Electrical";
-        $_SESSION["cat"] = "Street Lamp";
+        echo "Sewage-Maintenance";
+        $_SESSION["dep"] = "Sewage";
+        $_SESSION["cat"] = "Maintenance";
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
     } else if ($req == "app_user_new_water_connection_complaint") {
+        session_start();
+        echo "Water - New Water Connection";
+        $_SESSION["dep"] = "Water";
+        $_SESSION["cat"] = "New Water Connection";
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
+        $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
+        include('../html/complaint_form.html');
     } else if ($req == "app_user_water_connection_maintenance_complaint") {
+        session_start();
+        echo "Water -Water Connection Maintenance";
+        $_SESSION["dep"] = "Water";
+        $_SESSION["cat"] = "Water Connection Maintenance";
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
+        $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
+        include('../html/complaint_form.html');
     }
 }

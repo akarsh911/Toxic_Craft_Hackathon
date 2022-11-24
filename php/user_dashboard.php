@@ -18,7 +18,11 @@ if (isset($_GET["req"])) {
         include('../html/user_gas_department.html');
     } else if ($req == "app_user_emergency_menu") {
         include('../html/user_emergency_services.html');
-    } else if ($req == "app_queries") {
+    } 
+    else if ($req == "app_user_garbage_menu") {
+        include('../html/user_garbage.html');
+    } 
+    else if ($req == "app_queries") {
         include('../html/about_us.html');
     } else if ($req == "app_user_street_lamp_complaint") {
 
@@ -133,6 +137,24 @@ if (isset($_GET["req"])) {
         echo "Water -Water Connection Maintenance";
         $_SESSION["dep"] = "Water";
         $_SESSION["cat"] = "Water Connection Maintenance";
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
+        $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
+        include('../html/complaint_form.html');
+    }
+    else if ($req == "app_user_litter_complaint") {
+        session_start();
+        echo "Garbage-litter";
+        $_SESSION["dep"] = "Garbage";
+        $_SESSION["cat"] = "litter";
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
+        $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
+        include('../html/complaint_form.html');
+    }
+    else if ($req == "app_user_garbage_pickup_complaint") {
+        session_start();
+        echo "Garbage-garbage pickup";
+        $_SESSION["dep"] = "Garbage";
+        $_SESSION["cat"] = "garbage pickup";
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');

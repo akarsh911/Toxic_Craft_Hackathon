@@ -1,8 +1,9 @@
-.img {
+.img
+{
     height: 200px;
-    width: 90vw;
+    width: 1900px;;
     background-repeat: no-repeat;
     border: 30px black;
-
-    
+ 
+   /* padding-left: 200px;*/
 }

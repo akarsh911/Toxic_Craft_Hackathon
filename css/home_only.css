@@ -1,18 +1,18 @@
 .top_bar {
     min-width: min-content;
-    width: 2000vh;
+    width: 100vh;
     height: 12vh;
     max-height: 80px;
     position: absolute;
     left: 0;
     top: 0;
-    box-shadow: 2px 3px rgba(255, 255, 255, 0.571);
-    background-color: #fffefc;
+    box-shadow: 2px 3px rgba(17, 13, 13, 0.77);
+    background-color: #f6f1e8;
     backdrop-filter: blur(15px);
     padding-top: 1vh;
     padding-bottom: 1vh;
-    padding-left: -50vw;
-    padding-right: 5vw;
+    padding-left: 5vw;
+    ipadding-right:-20px ko m0,-i0;
     z-index: 5;
     display: flex;
     justify-content: space-between;

@@ -107,6 +107,16 @@ if (isset($_GET["req"])) {
         include('../html/complaint_form.html');
         echo "<script src='../js/change_comp.js'></script>";
         echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
+    } else if ($req == "app_user_new_gas_complaint") {
+        session_start();
+        echo "Gas Services-New Gas";
+        $_SESSION["dep"] = "Gas";
+        $_SESSION["cat"] = "New Gas";
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
+        $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
+        include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     } else if ($req == "app_user_road_maintain_complaint") {
         session_start();
         echo "Road-Road Maintain ";

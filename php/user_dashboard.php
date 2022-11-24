@@ -5,6 +5,7 @@ if (isset($_GET["req"])) {
     if ($req == "app_dashboard") {
         virtual('../html/user_dashboard.html');
     } else if ($req == "app_complaints") {
+    } else if ($req == "app_profile") {
     } else if ($req == "app_notifications") {
     } else if ($req == "app_user_elec_menu") {
         include('../html/user_electrical_department.html');
@@ -20,7 +21,8 @@ if (isset($_GET["req"])) {
         include('../html/user_emergency_services.html');
     } else if ($req == "app_user_garbage_menu") {
         include('../html/user_garbage.html');
-    } else if ($req == "app_queries") {
+    } 
+    else if ($req == "app_queries") {
         include('../html/about_us.html');
     } else if ($req == "app_user_street_lamp_complaint") {
 

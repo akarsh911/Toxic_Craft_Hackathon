@@ -309,3 +309,8 @@ div.foo::-webkit-bar-thumb {
 div.foo::-webkit-scrollbar-thumb:hover {
     background: rgba(31, 184, 187, 0.538);
 }
+
+frame {
+    width: 100%;
+    height: 100%;
+}

@@ -7,6 +7,7 @@ if (isset($_GET["req"])) {
     } else if ($req == "app_complaints") {
         virtual('../html/user_complaints.html');
     } else if ($req == "app_profile") {
+        virtual('../html/profile.html');
     } else if ($req == "app_notifications") {
     } else if ($req == "app_user_elec_menu") {
         include('../html/user_electrical_department.html');
@@ -22,8 +23,7 @@ if (isset($_GET["req"])) {
         include('../html/user_emergency_services.html');
     } else if ($req == "app_user_garbage_menu") {
         include('../html/user_garbage.html');
-    } 
-    else if ($req == "app_queries") {
+    } else if ($req == "app_queries") {
         include('../html/about_us.html');
     } else if ($req == "app_user_street_lamp_complaint") {
 
@@ -197,8 +197,7 @@ if (isset($_GET["req"])) {
         include('../html/complaint_form.html');
         echo "<script src='../js/change_comp.js'></script>";
         echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
-    }
-    else if ($req == "app_user_pest_complaint") {
+    } else if ($req == "app_user_pest_complaint") {
         session_start();
         echo "Pest";
         $_SESSION["dep"] = "Pest";
@@ -208,8 +207,7 @@ if (isset($_GET["req"])) {
         include('../html/complaint_form.html');
         echo "<script src='../js/change_comp.js'></script>";
         echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
-    }
-    else if ($req == "app_user_stray_complaint") {
+    } else if ($req == "app_user_stray_complaint") {
         session_start();
         echo "Stray";
         $_SESSION["dep"] = "Stray";
@@ -219,8 +217,7 @@ if (isset($_GET["req"])) {
         include('../html/complaint_form.html');
         echo "<script src='../js/change_comp.js'></script>";
         echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
-    }
-    else if ($req == "app_user_general_complaint") {
+    } else if ($req == "app_user_general_complaint") {
         session_start();
         echo "General Complaint";
         $_SESSION["dep"] = "General Complaint";

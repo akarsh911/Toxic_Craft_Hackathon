@@ -1,0 +1,50 @@
+<link href="../css/dasboard_header_style.css" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/56f1776af2.js" crossorigin="anonymous"></script>
+<script src="../js/dashboard_header.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<div class="top_bar">
+
+    <i class="fa fa-bars icon" aria-hidden="true" id="fold"></i>
+    <img class="logo_img" src="../media/logo.png" alt="Logo">
+
+
+    <div class="right_box">
+        <div class="notif" id='notif_click' onclick="notif_v();">
+            <span class="notif_badge">20</span>
+            <span class="bell"><i class="fa fa-bell"></i></span>
+
+        </div>
+        <div class="profile" id="profile_click" onclick="profile_v();">
+            <img alt="avatar" class="avatar" src="../media/avatar.jpeg" />
+            <div class="wlcm_msg"><span id="name">Akarsh Srivastava</span></div>
+        </div>
+
+    </div>
+    <div class="popup_box_profile " id="profile_box">
+        <div class="popup_header"><i class="fa fa-user" aria-hidden="true"></i> &nbsp;Profile</div>
+        <div class="popup_content">
+            <div class="profile_photo">
+                <div class="profile_change"><span><i class="fa fa-camera" aria-hidden="true"></i></span>Change
+                    Profile Photo</div>
+                <img class="profile_big" src="../media/avatar.jpeg" />
+            </div>
+            <div class="profile_details">
+                <span class="profile_name">Akarsh Srivastava</span><br>
+                <span class="profile_designation">IT Department</span><br>
+                <br>
+                <a href="#profile" class="profile_link"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;Edit
+                    Profile</a><br>
+                <a href="../php/logout_user.php" class="profile_link"><i class="fa fa-sign-out"
+                        aria-hidden="true"></i>&nbsp;Logout</a><br>
+            </div>
+        </div>
+    </div>
+    <div class="popup_box_profile notif" id="notif_box">
+        <div class="popup_header"><i class="fa fa-bell"></i>&nbsp;Notifications</div>
+        <div class="popup_content2 foo">
+            <table id="notif">
+                No notifications for Today
+            </table>
+        </div>
+    </div>
+</div>

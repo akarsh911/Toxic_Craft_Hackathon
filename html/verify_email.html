@@ -1,0 +1,14 @@
+<h1>Verify Email</h1>
+<label class="label">An Email Verification Code has been sent to
+    <span id="email"></span>
+</label><br><br><br>
+<form method="post" action="../php/verify_email.php">
+    <label class="label">Verfifcation Code</label><br>
+    <input type="text" class="input_box" name="code" id="input_box" required />
+    <div class="error" id="verify_error"></div>
+    <div class="wrapper2">
+        <span class="fg_pw" onclick="ping();">Resend?</span>
+        <button type="submit" class="login_bt">Confirm Email</button>
+    </div>
+</form>
+<script src="../js/verify_email.js"></script>

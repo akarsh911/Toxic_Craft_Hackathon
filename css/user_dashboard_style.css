@@ -1,0 +1,61 @@
+.dep_container {
+    background: linear-gradient(to top right, rgba(68, 42, 154, 0.845), rgb(29, 34, 171));
+    color: white;
+    font-size: 25px;
+    padding: 25px;
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    overflow-wrap: break-word;
+    border-radius: 50px;
+    border: solid rgb(0, 0, 0) 2px;
+    margin-top: 25px;
+    margin-left: 25px;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.5s;
+
+}
+
+
+
+.page {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.dep_logo {
+    font-size: 100px;
+}
+
+.dep_container:hover {
+    cursor: pointer;
+    transform:scale(1.1);
+    background: linear-gradient(to top right, rgb(29, 34, 171), rgba(68, 42, 154, 0.845));
+
+}
+
+.dep_containerhover.blue {
+    background-color: rgb(41, 194, 56);
+}
+
+
+@media screen and (max-width: 400px) {
+    body {
+        background-color: rgb(36, 121, 206);
+    }
+
+    .dep_container {
+        width: 95vw;
+        height: 300px;
+    }
+}

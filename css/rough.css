@@ -1,0 +1,23 @@
+
+
+.progress_container {
+    width: 80%;
+    height: 20px;
+    background-color: rgb(206, 206, 206);
+    border-radius: 15px;
+
+}
+
+.pg {
+    background-color: rgb(8, 195, 8);
+    height: 100%;
+    width: 40%;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.pg_1 {
+
+    color: white;
+
+}

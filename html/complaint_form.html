@@ -3,6 +3,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAprQv_1poHHjDfhRmJ3j742-JRWCfAF7o&libraries=places"
   type="text/javascript">
   </script>
+<script>alert("Hello");</script>
 <div class="container">
   <form action="action_page.php">
     <div class="row">
@@ -36,61 +37,4 @@
   </form>
 </div>
 
-
-
-
-
-<script>
-  var lati, lngi;
-  window.addEventListener("load", (event) => {
-    getLocation();
-  });
-
-
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-
-    } else {
-
-    }
-  }
-
-  function showPosition(position) {
-    lati = position.coords.latitude;
-    lngi = position.coords.longitude;
-    map_start(lati, lngi);
-  }
-
-  function map_start(lati, lngi) {
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-      center: {
-        lat: lati,
-        lng: lngi
-      },
-      zoom: 15
-    });
-    var marker = new google.maps.Marker({
-      position: {
-        lat: lati,
-        lng: lngi
-      },
-      map: map,
-      draggable: true
-    });
-
-    map.addListener('click', function (e) {
-      placeMarker(e.latLng, map);
-    });
-  }
-  function placeMarker(position, map) {
-    if (marker)
-      marker.setMap(null);
-    console.log(position.lat(), position.lng());
-    marker = new google.maps.Marker({
-      position: position,
-      map: map
-    });
-    map.panTo(position);
-  }
-</script>
+<script src="../js/complaint_form.js"></script>

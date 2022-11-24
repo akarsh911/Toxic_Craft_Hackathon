@@ -76,7 +76,7 @@ if ($err == 0) {
     $resp = "";
     if ($resp = create_user($email, $f_name, $l_name, $ph_no, $psw) == 1) {
 
-        echo "Success Creating Databse";
+        echo '<script>window.onload = (event) => {location.replace("../login")};</script>';
         //TODO: redirect to login page with message
 
     } else {
@@ -84,5 +84,5 @@ if ($err == 0) {
     }
 } else {
     echo "<script> sessionStorage.setItem('err_data', `" . json_encode($vals, JSON_PRETTY_PRINT) . "`);</script>";
-    echo '<script>window.onload = (event) => {location.replace("../html/onboard.html")};</script>';
+    echo '<script>window.onload = (event) => {location.replace("../register")};</script>';
 }

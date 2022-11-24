@@ -13,6 +13,7 @@ function new_complaint($dep, $cat, $user_id, $title, $descrip, $resource_url, $x
     if ($conn->query($sql) === TRUE) {
         assign_job($supervisor_id, 1, $comp_no);
         assign_job($assigned_id, 0, $comp_no);
+        return true;
     } else {
         return "Error: " . $sql . "<br>" . $conn->error;
     }

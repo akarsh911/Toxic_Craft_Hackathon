@@ -2,7 +2,6 @@
 if (isset($_GET["req"])) {
     $req = $_GET["req"];
     if ($req == "app_dashboard") {
-        echo "hi";
         virtual('../html/user_dashboard.html');
     } else if ($req == "app_complaints") {
     } else if ($req == "app_notifications") {

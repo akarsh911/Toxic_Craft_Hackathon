@@ -3,15 +3,14 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAprQv_1poHHjDfhRmJ3j742-JRWCfAF7o&libraries=places"
   type="text/javascript">
   </script>
-<script>alert("Hello");</script>
 <div class="container">
-  <form action="action_page.php">
+  <form action="../php/complaint_form_handler.php">
     <div class="row">
       <div class="col-25">
         <label for="fname">Subject</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" name="Subject" placeholder="Subject..">
+        <input type="text" id="title" name="title" placeholder="Subject..">
       </div>
     </div>
     <div class="row">
@@ -19,7 +18,7 @@
         <label for="subject">Description</label>
       </div>
       <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <textarea id="subject" name="description" placeholder="Write something.." style="height:200px"></textarea>
       </div>
     </div>
     <p>Upload an image of the problem:

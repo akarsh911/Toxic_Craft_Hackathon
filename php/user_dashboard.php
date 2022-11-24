@@ -187,4 +187,26 @@ if (isset($_GET["req"])) {
         echo "<script src='../js/change_comp.js'></script>";
         echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
     }
+    else if ($req == "app_user_pest_complaint") {
+        session_start();
+        echo "Pest";
+        $_SESSION["dep"] = "Pest";
+        $_SESSION["cat"] = "Comp";
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
+        $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
+        include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
+    }
+    else if ($req == "app_user_stray_complaint") {
+        session_start();
+        echo "Stray";
+        $_SESSION["dep"] = "Stray";
+        $_SESSION["cat"] = "Comp";
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
+        $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
+        include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','" . $_SESSION["dep"] . "','" . $_SESSION["cat"] . "');</script>";
+    }
 }

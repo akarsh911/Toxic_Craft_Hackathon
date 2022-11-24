@@ -1,4 +1,5 @@
 <?php
+header('P3P: CP="CAO PSA OUR"');
 if (isset($_GET["req"])) {
     $req = $_GET["req"];
     if ($req == "app_dashboard") {
@@ -23,11 +24,13 @@ if (isset($_GET["req"])) {
 
         session_start();
         echo "Electrical Department- Damaged Street Lamp";
-        $_SESSION["dep"] = "Electrical";
-        $_SESSION["cat"] = "Street Lamp";
+        $_COOKIE["dep"] = "Electrical";
+        $_COOKIE["cat"] = "Street Lamp";
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
+        echo "<script src='../js/change_comp.js'></script>";
+        echo "<script>caller('" . get_log_in($_COOKIE["key"]) . "','Electrical','light');</script>";
     } else if ($req == "app_user_house_power_supply_complaint") {
         session_start();
         echo "Electrical Department-House Power Supply";
@@ -61,6 +64,7 @@ if (isset($_GET["req"])) {
         $_SERVER["user_id"] = get_log_in($_COOKIE["key"]);
         include('../html/complaint_form.html');
     } else if ($req == "app_user_police_complaint") {
+
         session_start();
         echo "Emergency Services- Police";
         $_SESSION["dep"] = "Emergency Services";

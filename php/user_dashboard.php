@@ -2,7 +2,8 @@
 if (isset($_GET["req"])) {
     $req = $_GET["req"];
     if ($req == "app_dashboard") {
-        include('../html/user_dashboard.html');
+        echo "hi";
+        virtual('../html/user_dashboard.html');
     } else if ($req == "app_complaints") {
     } else if ($req == "app_notifications") {
     } else if ($req == "app_user_elec_menu") {

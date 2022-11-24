@@ -1,3 +1,10 @@
+.mySlides {display:none;}
+.boxslide{
+    height: 5px;
+}
+.myslides{
+    height: 100px;
+}
 .dep_container {
     background: linear-gradient(to top right, rgba(68, 42, 154, 0.845), rgb(29, 34, 171));
     color: white;

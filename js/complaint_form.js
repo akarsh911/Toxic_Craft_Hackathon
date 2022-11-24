@@ -1,6 +1,5 @@
 var lati, lngi;
 window.addEventListener("load", (event) => {
-    alert("loaded");
     getLocation();
 });
 

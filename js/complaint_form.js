@@ -43,6 +43,8 @@ function map_start(lati, lngi) {
 function placeMarker(position, map) {
     if (marker)
         marker.setMap(null);
+    document.getElementById("lat").value = position.lat();
+    document.getElementById("lng").value = position.lng();
     console.log(position.lat(), position.lng());
     marker = new google.maps.Marker({
         position: position,

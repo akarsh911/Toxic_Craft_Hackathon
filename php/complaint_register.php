@@ -9,7 +9,7 @@ function new_complaint($dep, $cat, $user_id, $title, $descrip, $resource_url, $x
     $assigned_id = get_employee_code_min($dep, 0);
     $supervisor_id = get_employee_code_min($dep, 1);
     $current_date = date("Y-m-d h:i:sa");
-    $sql = "INSERT INTO city_complaints (comp_id,user_id,department,category,title,descrip,assigned_id,supervisor_id,complaint_date,resource_url,complaint_state,x-cord,y-cord) VALUES ('$comp_no','$user_id','$dep','$cat','$title','$descrip','$assigned_id','$supervisor_id','$current_date','$resource_url','started','$xcord','$ycord')";
+    $sql = "INSERT INTO city_complaints (comp_id,user_id,department,category,title,descrip,assigned_id,supervisor_id,complaint_date,resource_url,complaint_state,x_cord,y_cord) VALUES ('$comp_no','$user_id','$dep','$cat','$title','$descrip','$assigned_id','$supervisor_id','$current_date','$resource_url','started','$xcord','$ycord')";
     if ($conn->query($sql) === TRUE) {
         assign_job($supervisor_id, 1, $comp_no);
         assign_job($assigned_id, 0, $comp_no);
@@ -34,6 +34,7 @@ function get_last_complaint_s_no()
         echo ("Error description: " . $conn->error);
     }
     if ($result->num_rows > 0) {
+        $row = 0;
         while ($row = $result->fetch_assoc()) {
         }
         return $row["s_no"];
@@ -195,17 +196,17 @@ function complaints_user($user_id)
     if (!$result) {
         echo ("Error description: " . $conn->error);
     }
-    $all_comps=array();$count=0;
+    $all_comps = array();
+    $count = 0;
     if ($result->num_rows > 0) {
-      
+
         while ($row = $result->fetch_assoc()) {
-            $count++;   
-            $all_comps[$count]=$row;  
+            $count++;
+            $all_comps[$count] = $row;
         }
         $myJSON = json_encode($all_comps);
         echo "<script> sessionStorage.setItem('err_data', `" . json_encode($myJSON, JSON_PRETTY_PRINT) . "`);</script>";
         echo '<script>window.onload = (event) => {location.replace("../html/onboard.html")};</script>';
-        
     } else {
         return 0;
     }

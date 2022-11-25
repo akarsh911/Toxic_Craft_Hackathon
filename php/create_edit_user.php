@@ -3,7 +3,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/php/database_connect.php");
 function create_user($email, $f_name, $l_name, $ph_no, $psw_hash)
 {
     $conn = openCon();
-    $sql = "INSERT INTO city_users (f_name,l_name,email,ph_no,psw_hash,user_state,dashboard_type,email_verify) VALUES ('$f_name','$l_name','$email','$ph_no','$psw_hash','user','0','0')";
+    $sql = "INSERT INTO city_users (f_name,l_name,email,ph_no,psw_hash,user_state,dashboard_type,email_verify) VALUES ('$f_name','$l_name','$email','$ph_no','$psw_hash','user','0','1')";
     if ($conn->query($sql) === TRUE) {
         return 1;
     } else {

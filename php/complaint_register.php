@@ -320,3 +320,72 @@ function employe_ok_comp($comp_id, $status)
     }
     closeCon($conn);
 }
+function count_unresolved($useer_id)
+{
+    $conn = openCon();
+    $sql = "SELECT comp_id,user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints` WHERE assigned_id='$useer_id';";
+    $result = $conn->query($sql);
+    $count = 0;
+    if (!$result) {
+        echo ("Error description: " . $conn->error);
+    }
+
+    $all_comps = array();
+    $count = 0;
+    if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+            if ($row['complaint_state'] == "started")
+                $count++;
+        }
+        return $count;
+    }
+    return 0;
+    closeCon($conn);
+}
+function count_resolved($useer_id)
+{
+    $conn = openCon();
+    $sql = "SELECT comp_id,user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints` WHERE assigned_id='$useer_id';";
+    $result = $conn->query($sql);
+    $count = 0;
+    if (!$result) {
+        echo ("Error description: " . $conn->error);
+    }
+
+    $all_comps = array();
+    $count = 0;
+    if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+            if ($row['complaint_state'] == "finished")
+                $count++;
+        }
+        return $count;
+    }
+    return 0;
+    closeCon($conn);
+}
+function count_pending($useer_id)
+{
+    $conn = openCon();
+    $sql = "SELECT comp_id,user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints` WHERE assigned_id='$useer_id';";
+    $result = $conn->query($sql);
+    $count = 0;
+    if (!$result) {
+        echo ("Error description: " . $conn->error);
+    }
+
+    $all_comps = array();
+    $count = 0;
+    if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+            if ($row['complaint_state'] != "finished" && $row['complaint_state'] != "started")
+                $count++;
+        }
+        return $count;
+    }
+    return 0;
+    closeCon($conn);
+}

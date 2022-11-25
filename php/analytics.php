@@ -1,12 +1,3 @@
-<?php
-<?php
-require_once('../php/script_check_login.php');
-if (!check_login()) {
-    header("Location: /login");
-    exit();
-}
-?>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,25 +35,56 @@ if (!check_login()) {
             $user_mail = get_log_in($_COOKIE["key"]);
             $ds = get_dashboard_type($user_mail);
             if ($ds == 0) {
-               // require_once("../php/complaint_register.php");
-               
+                // require_once("../php/complaint_register.php");
+
                 //include("../html/user_complaints.html");
             } else if ($ds == 1) {
-                require_once("../php/complaint_register.php");
-                $ret = complaints_admin(); ?>
-            <script>
-            localStorage.setItem('complaints', '"<?php echo $ret; ?>"');
-            </script>
-            <?php
-                include("../html/admin_complaints.html");
+                // require_once("../php/complaint_register.php");
+                // $ret = complaints_admin(); 
+                // include("../html/admin_complaints.html");
             } else if ($ds == 2) {
                 require_once("../php/complaint_register.php");
-                $ret = complaints_user($user_mail); ?>
+                $ret1 = count_pending($user_mail);
+                $ret2 = count_resolved($user_mail);
+                $ret3 = count_unresolved($user_mail);
+            ?>
             <script>
-            localStorage.setItem('complaints', '"<?php echo $ret; ?>"');
+            window.onload = function() {
+
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    title: {
+                        text: "Desktop Search Engine Market Share - 2016"
+                    },
+                    data: [{
+                        type: "pie",
+                        startAngle: 240,
+                        yValueFormatString: "##0.00\"%\"",
+                        indexLabel: "{label} {y}",
+                        dataPoints: [{
+                                y: <?php echo $ret1; ?>,
+                                label: "Pending"
+                            },
+                            {
+                                y: <?php echo $ret2; ?>,
+                                label: "resolved"
+                            },
+                            {
+                                y: <?php echo $ret1; ?>,
+                                label: "unresolved"
+                            },
+
+                        ]
+                    }]
+                });
+                chart.render();
+
+            }
             </script>
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
             <?php
-                include("../html/emp_complaints.html");
             }
             ?>
         </div>

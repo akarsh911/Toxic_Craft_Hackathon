@@ -8,6 +8,7 @@ AddHandler server-parsed .html .htm
   RewriteEngine On
   php_flag output_buffering on
   RewriteRule ^profile$ /php/profile.php [NC,L]
+  RewriteRule ^complaints$ /php/complaint.php [NC,L]
   RewriteRule ^notification$ /php/motification.php [NC,L]
   RewriteRule ^dashboard$ /php/dashboard_index.php [NC,L]
   RewriteRule ^([a-zA-Z0-9_-]*)$ index.php?type=$1 [NC,C]

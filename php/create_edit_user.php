@@ -109,3 +109,17 @@ function get_last_emp_id()
         return 0;
     }
 }
+function find_user_id($email)
+{
+    $conn = openCon();
+    $sql = "SELECT emp_id FROM city_officials WHERE email='$email' || ph_no='$email'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            return $row['emp_id'];
+        }
+    } else {
+        return 0;
+    }
+}

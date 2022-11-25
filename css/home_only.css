@@ -167,3 +167,19 @@
     }
 
 }
+#lab_social_icon_footer {
+   
+    padding: 40px 0;
+    padding-left: 550px;
+    background-color: #dedede;
+}
+
+#lab_social_icon_footer a {
+    color: #333;
+}
+
+#lab_social_icon_footer .social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}

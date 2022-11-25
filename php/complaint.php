@@ -1,4 +1,3 @@
-
 <?php
 require_once('../php/script_check_login.php');
 if (!check_login()) {
@@ -8,7 +7,7 @@ if (!check_login()) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<script src="../js/dashboard.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,21 +35,22 @@ if (!check_login()) {
         </div>
 
         <div class="data_html" id="data_html">
-        <?php
-                require_once("../php/user_dashboard_data.php");
-                $user_mail = get_log_in($_COOKIE["key"]);
-                $ds = get_dashboard_type($user_mail);
-                if ($ds == 0){
-                    require_once("../php/complaint_register.php");
-                    $ret=complaints_user($user_mail);?>
-                    <script>localStorage.setItem('complaints','"<?php echo $ret;?>"');</script>
-                    <?php
-                    include("../html/user_complaints.html");}
-
-                else if ($ds == 1)
-                    include("../html/admin_complaints.html"); ?>
+            <?php
+            require_once("../php/user_dashboard_data.php");
+            $user_mail = get_log_in($_COOKIE["key"]);
+            $ds = get_dashboard_type($user_mail);
+            if ($ds == 0) {
+                require_once("../php/complaint_register.php");
+                $ret = complaints_user($user_mail); ?>
+            <script>
+            localStorage.setItem('complaints', '"<?php echo $ret; ?>"');
+            </script>
+            <?php
+                include("../html/user_complaints.html");
+            } else if ($ds == 1)
+                include("../html/admin_complaints.html"); ?>
         </div>
-        
+
 </body>
 
 </html>

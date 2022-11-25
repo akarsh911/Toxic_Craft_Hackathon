@@ -220,7 +220,7 @@ function complaints_user($user_id)
             $all_comps[$count] = $sub_com;
         }
         $all_comps["count"] = $count;
-        return $all_comps;
+        return json_encode($all_comps);
     } else {
         return 0;
     }

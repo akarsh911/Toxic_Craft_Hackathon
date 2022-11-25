@@ -1,6 +1,5 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/create_edit_user.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php/create_edit_application.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/verification_credentials.php');
 $f_name = $_POST["f_name"];
 $l_name = $_POST["l_name"];
@@ -113,5 +112,5 @@ if ($err == 0) {
     }
 } else {
     echo "<script> sessionStorage.setItem('err_data', `" . json_encode($vals, JSON_PRETTY_PRINT) . "`);</script>";
-    echo '<script>window.onload = (event) => {location.replace("../html/onboard.html")};</script>';
+    // echo '<script>window.onload = (event) => {location.replace("../html/onboard_emp.html")};</script>';
 }

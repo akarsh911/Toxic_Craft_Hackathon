@@ -219,7 +219,7 @@ function complaints_user($user_id)
             $sub_com["y_cord"]=$row["y_cord"];
             $all_comps[$count] = $sub_com;
         }
-        $all_comps["count"] = $count;
+        $all_comps["count"]=$count;
         return json_encode($all_comps);
     } else {
         return 0;

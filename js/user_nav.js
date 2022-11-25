@@ -1,3 +1,5 @@
+if(window.location.pathname=="/dashboard")
+{
 addEventListener('hashchange', (event) => { });
 onhashchange = (event) => {
     console.log(location.hash);
@@ -61,3 +63,4 @@ window.addEventListener("load", (event) => {
             });
     }
 });
+}

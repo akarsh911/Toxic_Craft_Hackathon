@@ -1,4 +1,5 @@
 var data1=localStorage.getItem("complaints");
+data1=data1.substring(1,data1.length-1);
 const data=JSON.parse(data1);
 if(data!=null)
 {

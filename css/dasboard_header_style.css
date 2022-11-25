@@ -239,12 +239,12 @@ table {
 }
 
 tr {
-    color: rgb(40, 97, 3);
+    color: rgb(0, 0, 0);
     vertical-align: center;
     width: 100%;
     padding-left: 1%;
     padding-right: 1%;
-    background-color: rgba(26, 28, 27, 0.366);
+    background-color: rgba(86, 210, 177, 0.852);
     border-radius: 20px;
     height: 70px;
     border-bottom: 1px solid rgb(73, 73, 73);
@@ -252,7 +252,7 @@ tr {
 
 tr:hover {
     color: rgb(40, 97, 3);
-    background-color: rgba(153, 120, 243, 0.799);
+    background-color: rgba(141, 243, 120, 0.799);
     cursor: pointer;
 }
 

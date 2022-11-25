@@ -1,16 +1,20 @@
 .grid-container {
-    display: grid;
+    display: table-column-group ;
+    
     grid-template-columns: auto auto;
-    background-color: #bfc0c9;
+    background-color: #c7c1c1cd;
     padding: 10px;
   }
   .grid-item {
-    background-color: rgb(255, 255, 241);
-    border: 1px solid rgba(0, 0, 0.8);
-    padding: 20px;
+    background-color: rgb(251, 247, 247);
+    border: 100px solid rgba(0, 0, 0.8);
+    padding: 10px;
     font-size: 30px;
     text-align: center;
   }
   .h1{
-    padding-left: 50%;
+    padding-left: -50%;
+  }
+  table,th,td{
+    border:1px solid black;
   }

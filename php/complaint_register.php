@@ -232,7 +232,7 @@ function complaints_emp($user_id)
     require_once("../php/create_edit_user.php");
     $id = find_user_id($user_id);
     $conn = openCon();
-    $sql = "SELECT department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE assigned_id='$id' ;";
+    $sql = "SELECT comp_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE assigned_id='$id' ;";
     $result = $conn->query($sql);
     if (!$result) {
         echo ("Error description: " . $conn->error);
@@ -257,6 +257,7 @@ function complaints_emp($user_id)
             $sub_com["remarks"] = $row["remarks"];
             $sub_com["x_cord"] = $row["x_cord"];
             $sub_com["y_cord"] = $row["y_cord"];
+            $sub_com["comp_id"] = $row["comp_id"];
             $all_comps[$count] = $sub_com;
         }
         $all_comps["count"] = $count;
@@ -271,7 +272,7 @@ function complaints_admin()
 {
     require_once("../php/create_edit_user.php");
     $conn = openCon();
-    $sql = "SELECT user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints`;";
+    $sql = "SELECT comp_id,user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints`;";
     $result = $conn->query($sql);
     if (!$result) {
         echo ("Error description: " . $conn->error);
@@ -297,12 +298,25 @@ function complaints_admin()
             $sub_com["x_cord"] = $row["x_cord"];
             $sub_com["y_cord"] = $row["y_cord"];
             $sub_com["assigned_id"] = $row["assigned_id"];
+            $sub_com["comp_id"] = $row["comp_id"];
             $all_comps[$count] = $sub_com;
         }
         $all_comps["count"] = $count;
         return json_encode($all_comps);
     } else {
         return 0;
+    }
+    closeCon($conn);
+}
+function employe_ok_comp($comp_id, $status)
+{
+    $conn = openCon();
+    $sql = "UPDATE city_complaints  SET complaint_state='$status' WHERE  comp_id='$comp_id' ";
+    if ($conn->query($sql) === TRUE) {
+
+        return "1";
+    } else {
+        return "Error: " . $sql . "<br>" . $conn->error;
     }
     closeCon($conn);
 }

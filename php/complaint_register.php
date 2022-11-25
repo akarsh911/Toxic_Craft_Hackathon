@@ -191,7 +191,7 @@ function complaints_user($user_id)
 {
 
     $conn = openCon();
-    $sql = "SELECT department,category,title,x_cord,y_cord,descrip,assigned_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE user_id='$user_id' ;";
+    $sql = "SELECT user_id,department,category,title,x_cord,y_cord,descrip,assigned_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE user_id='$user_id' ;";
     $result = $conn->query($sql);
     if (!$result) {
         echo ("Error description: " . $conn->error);
@@ -202,9 +202,9 @@ function complaints_user($user_id)
 
         while ($row = $result->fetch_assoc()) {
             $count++;
-            $all_comps[$count] = $row;
+            $all_comps[$count] = json_encode($row);
         }
-
+        $all_comps["count"] = $count;
         return json_encode($all_comps);
     } else {
         return 0;

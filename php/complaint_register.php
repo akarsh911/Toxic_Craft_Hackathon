@@ -226,3 +226,84 @@ function complaints_user($user_id)
     }
     closeCon($conn);
 }
+
+function complaints_emp($user_id)
+{
+    require_once("../php/create_edit_user.php");
+    $id = find_user_id($user_id);
+    $conn = openCon();
+    $sql = "SELECT department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE assigned_id='$id' ;";
+    $result = $conn->query($sql);
+    if (!$result) {
+        echo ("Error description: " . $conn->error);
+    }
+
+    $all_comps = array();
+    $count = 0;
+    if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+            $sub_com = array();
+            $count++;
+            $sub_com["department"] = $row["department"];
+            $sub_com["user_id"] = $row["user_id"];
+            $sub_com["category"] = $row["category"];
+            $sub_com["title"] = $row["title"];
+            $sub_com["descrip"] = $row["descrip"];
+            $sub_com["assigned_id"] = $row["assigned_id"];
+            $sub_com["complaint_date"] = $row["complaint_date"];
+            $sub_com["complaint_state"] = $row["complaint_state"];
+            $sub_com["resource_url"] = $row["resource_url"];
+            $sub_com["remarks"] = $row["remarks"];
+            $sub_com["x_cord"] = $row["x_cord"];
+            $sub_com["y_cord"] = $row["y_cord"];
+            $all_comps[$count] = $sub_com;
+        }
+        $all_comps["count"] = $count;
+        return json_encode($all_comps);
+    } else {
+        return 0;
+    }
+    closeCon($conn);
+}
+
+function complaints_admin()
+{
+    require_once("../php/create_edit_user.php");
+    $id = find_user_id($user_id);
+    $conn = openCon();
+    $sql = "SELECT user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints`;";
+    $result = $conn->query($sql);
+    if (!$result) {
+        echo ("Error description: " . $conn->error);
+    }
+
+    $all_comps = array();
+    $count = 0;
+    if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+            $sub_com = array();
+            $count++;
+            $sub_com["department"] = $row["department"];
+            $sub_com["user_id"] = $row["user_id"];
+            $sub_com["category"] = $row["category"];
+            $sub_com["title"] = $row["title"];
+            $sub_com["descrip"] = $row["descrip"];
+            $sub_com["assigned_id"] = $row["assigned_id"];
+            $sub_com["complaint_date"] = $row["complaint_date"];
+            $sub_com["complaint_state"] = $row["complaint_state"];
+            $sub_com["resource_url"] = $row["resource_url"];
+            $sub_com["remarks"] = $row["remarks"];
+            $sub_com["x_cord"] = $row["x_cord"];
+            $sub_com["y_cord"] = $row["y_cord"];
+            $sub_com["assigned_id"] = $row["assigned_id"];
+            $all_comps[$count] = $sub_com;
+        }
+        $all_comps["count"] = $count;
+        return json_encode($all_comps);
+    } else {
+        return 0;
+    }
+    closeCon($conn);
+}

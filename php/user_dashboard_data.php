@@ -61,7 +61,7 @@ function get_dashboard_type($user_mail)
 {
     $conn = openCon();
     $ip = get_client_ip();
-    $sql = "SELECT f_name,l_name,dashboard_type,ph_no FROM `city_users` WHERE email='$user_mail'";
+    $sql = "SELECT f_name,l_name,dashboard_type,ph_no,state FROM `city_users` WHERE email='$user_mail'";
     $result = $conn->query($sql);
     if (!$result) {
         echo ("Error description: " . $conn->error);

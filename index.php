@@ -15,7 +15,9 @@ if ($type == "login" || $type == "Login") {
 } else if ($type == "register") {
     virtual('./html/template.html');
     virtual('./html/onboard.html');
-} else if ($type == "verify") {
+} 
+   
+else if ($type == "verify") {
     if (refer("/php/login_user.php") || refer("/php/verify_email.php")) {
         virtual('./html/template.html');
         virtual('./html/verify_box.html');

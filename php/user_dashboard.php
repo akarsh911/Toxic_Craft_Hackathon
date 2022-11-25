@@ -1,5 +1,4 @@
 <?php
-header('P3P: CP="CAO PSA OUR"');
 if (isset($_GET["req"])) {
     $req = $_GET["req"];
     if ($req == "app_dashboard") {
@@ -7,8 +6,8 @@ if (isset($_GET["req"])) {
     } else if ($req == "app_complaints") {
         require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
         require_once('../php/complaint_register.php');
-        complaints_user(get_log_in($_COOKIE["key"]));
-        virtual('../html/user_complaints.html');
+        echo complaints_user(get_log_in($_COOKIE["key"]));
+        
     } else if ($req == "app_profile") {
         include('../html/profile.html');
     } else if ($req == "app_notification") {

@@ -191,52 +191,21 @@ function complaints_user($user_id)
 {
 
     $conn = openCon();
-    $sql = "SELECT department,category,title,x_cord,y_cord,descrip,assigned_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE user_id='$user_id' ;";
+    $sql = "SELECT user_id,department,category,title,x_cord,y_cord,descrip,assigned_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE user_id='$user_id' ;";
     $result = $conn->query($sql);
     if (!$result) {
         echo ("Error description: " . $conn->error);
     }
-    $all_comps = array();
+    $all_comps = [];
     $count = 0;
-    echo "<br>
-    <br><table>";
-    echo "<style>table, th, td {
-  border: 1px solid black;
-}</style>";
-    echo `<tr>
-    <th>department</th>
-    <th>category</th>
-     <th>title</th>
-       <th>description</th>
-       <th>assigned id</th>
-       <th>complaint date</th>
-       <th>Status</th>
-      <th>lat </th>
-      <th>lon </th>
-      
-  </tr><br>`;
     if ($result->num_rows > 0) {
 
         while ($row = $result->fetch_assoc()) {
-            echo `<tr>
-    <th>` . $row['department'] . `</th>
-    <th>` . $row['category'] . `</th>
-     <th>` . $row['title'] . `</th>
-       <th>` . $row['descrip'] . `</th>
-       <th>` . $row['assigned_id'] . `</th>
-       <th>` . $row['complaint_date'] . `</th>
-       <th>` . $row['complaint_state'] . `</th>
-      <th>` . $row['y_cord'] . `</th>
-      <th>` . $row['x_cord'] . `</th>
-      
-  </tr><br>`;
             $count++;
-            $all_comps[$count] = $row;
+            $all_comps[$count] = json_encode($row);
         }
-        $myJSON = json_encode($all_comps);
-        echo "<script> localStorage.setItem('dashboard_data', `" . $myJSON . "`);</script>";
-
-        return;
+        $all_comps["count"] = $count;
+        return json_encode($all_comps);
     } else {
         return 0;
     }

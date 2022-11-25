@@ -196,7 +196,7 @@ function complaints_user($user_id)
     if (!$result) {
         echo ("Error description: " . $conn->error);
     }
-    $all_comps = array();
+    $all_comps = [];
     $count = 0;
     if ($result->num_rows > 0) {
 

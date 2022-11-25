@@ -11,7 +11,8 @@ if (isset($_GET["req"])) {
         virtual('../html/user_complaints.html');
     } else if ($req == "app_profile") {
         include('../html/profile.html');
-    } else if ($req == "app_notifications") {
+    } else if ($req == "app_notification") {
+        include('../html/complaintcards.html');
     } else if ($req == "app_user_elec_menu") {
         include('../html/user_electrical_department.html');
     } else if ($req == "app_user_water_menu") {

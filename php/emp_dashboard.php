@@ -5,4 +5,7 @@ if (isset($_GET["req"])) {
     if ($req == "app_dashboard") {
         include('../html/emp_dashboard.html');
     }
+    if ($req == "app_analytics") {
+        require_once("emp_analytics.php");
+    }
 }

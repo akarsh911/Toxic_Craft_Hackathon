@@ -11,7 +11,7 @@ onhashchange = (event) => {
     else {
         $.ajax(
             {
-                url: '../php/user_dashboard.php?req=app_' + hash,
+                url: '../php/admin_dashboard.php?req=app_' + hash,
                 dataType: "html",
                 success: function (data) {
                     chng.innerHTML = data;
@@ -43,7 +43,7 @@ window.addEventListener("load", (event) => {
     else {
         $.ajax(
             {
-                url: '../php/user_dashboard.php?req=app_' + hash,
+                url: '../php/admin_dashboard.php?req=app_' + hash,
                 dataType: "html",
                 success: function (data) {
                     chng.innerHTML = data;

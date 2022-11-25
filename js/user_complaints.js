@@ -3,9 +3,9 @@ data1=data1.substring(1,data1.length-1);
 const data=JSON.parse(data1);
 if(data!=null)
 {
-    alert("");
+    
     for(var i=1;i<=data.count;i++)
-    {
+    {alert("");
         var dt=document.getElementById("comp_table").innerHTML;
         var x=`<tr>
         <th>
@@ -36,5 +36,6 @@ if(data!=null)
         `+data[i].resource_url+`
         </th>
     </tr>`;
+    document.getElementById("comp_table").innerHTML=dt+x;
     }
 }

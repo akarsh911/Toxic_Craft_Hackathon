@@ -270,7 +270,6 @@ function complaints_emp($user_id)
 function complaints_admin()
 {
     require_once("../php/create_edit_user.php");
-    $id = find_user_id($user_id);
     $conn = openCon();
     $sql = "SELECT user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints`;";
     $result = $conn->query($sql);

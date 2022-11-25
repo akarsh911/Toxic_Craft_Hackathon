@@ -196,7 +196,7 @@ function complaints_user($user_id)
     if (!$result) {
         echo ("Error description: " . $conn->error);
     }
-    $all_comps = [];
+    $all_comps = array();
     $count = 0;
     if ($result->num_rows > 0) {
 
@@ -204,7 +204,7 @@ function complaints_user($user_id)
             $count++;
             $all_comps[$count] = json_encode($row);
         }
-        $all_comps["count"] = $count;
+        $all_comps["count"]=$count;
         return json_encode($all_comps);
     } else {
         return 0;

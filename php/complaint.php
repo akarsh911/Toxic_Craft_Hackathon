@@ -30,7 +30,9 @@ if (!check_login()) {
                 if ($ds == 0)
                     include("../html/user_nav.html");
                 else if ($ds == 1)
-                    include("../html/admin_nav.html"); ?>
+                    include("../html/admin_nav.html");
+                else if ($ds == 2)
+                    include("../html/emp_nav.html"); ?>
 
             </div>
         </div>
@@ -48,8 +50,24 @@ if (!check_login()) {
             </script>
             <?php
                 include("../html/user_complaints.html");
-            } else if ($ds == 1)
-                include("../html/admin_complaints.html"); ?>
+            } else if ($ds == 1) {
+                require_once("../php/complaint_register.php");
+                $ret = complaints_admin(); ?>
+            <script>
+            localStorage.setItem('complaints', '"<?php echo $ret; ?>"');
+            </script>
+            <?php
+                include("../html/admin_complaints.html");
+            } else if ($ds == 2) {
+                require_once("../php/complaint_register.php");
+                $ret = complaints_user($user_mail); ?>
+            <script>
+            localStorage.setItem('complaints', '"<?php echo $ret; ?>"');
+            </script>
+            <?php
+                include("../html/emp_complaints.html");
+            }
+            ?>
         </div>
 
 </body>

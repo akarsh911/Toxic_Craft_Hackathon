@@ -33,7 +33,7 @@ if (!check_login()) {
                     include("../html/admin_nav.html"); ?>
             </div>
         </div>
-
+        <script src="../js/dashboard.js"></script>
         <div class="data_html" id="data_html">
             <?php
             require_once("../php/user_dashboard_data.php");

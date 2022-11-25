@@ -320,8 +320,10 @@ function employe_ok_comp($comp_id, $status)
     }
     closeCon($conn);
 }
-function count_unresolved($useer_id)
+function count_unresolved($user_id)
 {
+    require_once("../php/create_edit_user.php");
+    $useer_id = find_user_id($user_id);
     $conn = openCon();
     $sql = "SELECT comp_id,user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints` WHERE assigned_id='$useer_id';";
     $result = $conn->query($sql);
@@ -343,8 +345,10 @@ function count_unresolved($useer_id)
     return 0;
     closeCon($conn);
 }
-function count_resolved($useer_id)
+function count_resolved($user_id)
 {
+    require_once("../php/create_edit_user.php");
+    $useer_id = find_user_id($user_id);
     $conn = openCon();
     $sql = "SELECT comp_id,user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints` WHERE assigned_id='$useer_id';";
     $result = $conn->query($sql);
@@ -366,8 +370,10 @@ function count_resolved($useer_id)
     return 0;
     closeCon($conn);
 }
-function count_pending($useer_id)
+function count_pending($user_id)
 {
+    require_once("../php/create_edit_user.php");
+    $useer_id = find_user_id($user_id);
     $conn = openCon();
     $sql = "SELECT comp_id,user_id,department,category,title,x_cord,y_cord,descrip,user_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback,assigned_id FROM `city_complaints` WHERE assigned_id='$useer_id';";
     $result = $conn->query($sql);

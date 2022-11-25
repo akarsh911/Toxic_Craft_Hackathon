@@ -23,7 +23,14 @@ if (!check_login()) {
     <div class="no_head">
         <div class="navigation_container " id="navigation_container">
             <div class="navigation_bar">
-                <?php include("../html/user_nav.html"); ?>
+                <?php
+                require_once("../php/user_dashboard_data.php");
+                $user_mail=get_log_in($_COOKIE["key"]);
+                $ds=get_dashboard_type($user_mail);
+            if($ds==0)
+                include("../html/user_nav.html");
+                else if($ds==1)
+                include("../html/admin_nav.html"); ?>
             </div>
         </div>
 

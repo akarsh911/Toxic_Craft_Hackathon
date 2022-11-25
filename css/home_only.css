@@ -1,13 +1,13 @@
 .top_bar {
     min-width: min-content;
-    width: 100vh;
+    width: 100vw;
     height: 12vh;
     max-height: 80px;
     position: absolute;
     left: 0;
     top: 0;
     box-shadow: 2px 3px rgba(17, 13, 13, 0.77);
-    background-color: #f6f1e8;
+    background-color: #ffffff;
     backdrop-filter: blur(15px);
     padding-top: 1vh;
     padding-bottom: 1vh;

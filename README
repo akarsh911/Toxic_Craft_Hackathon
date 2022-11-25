@@ -15,4 +15,10 @@ In the content part of the website the first part is a slideshow which shows dif
 The images have been shown using different links from Google Images. 
 The slideshow has been supported by javascript in the file slideshow.js
 Further the homepage consists of description and history of the City of Patiala which has been written down in html and source of the information is www.google.com
-The homepage also consists of 
+The entire styling of the homepage has been done in Cascading Styling Sheets(CSS) and is saved in the css folder with the file name home_page.css
+The header and footer have been linked to home_page.css which are contained in the files header_style.css and css of footer is intext contained in the file footer_home_page.html
+The lower part of the page consists of page consists of icons which directs to the social media pages of the admin: Facebook, Twitter, Google+ and Gmail.
+The icons have been insterted using the icons from the website https://fontawesome.com/v4/icons/.
+The javascript code of the icons have been inserted in the <head> tag of the html
+2)Register Form page:
+The header and footer have been linked to home_page.css which are contained in the files header_style.css and css of footer is intext contained in the file footer_home_page.html

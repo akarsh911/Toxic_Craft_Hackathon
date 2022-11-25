@@ -1,5 +1,5 @@
 <?php
-require_once('../php/script_check_login.php');
+include_once('../php/script_check_login.php');
 if (!check_login()) {
     header("Location: /login");
     exit();

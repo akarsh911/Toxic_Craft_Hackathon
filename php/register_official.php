@@ -107,7 +107,7 @@ if ($err == 0) {
 
         echo "Success Creating Databse";
         //TODO: redirect to login page with message
-
+        echo '<script>window.onload = (event) => {location.replace("../login")};</script>';
     } else {
         echo $resp;
     }

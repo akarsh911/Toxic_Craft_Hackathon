@@ -9,6 +9,7 @@
     background: linear-gradient(to top right, rgba(68, 42, 154, 0.845), rgb(29, 34, 171));
     color: white;
     font-size: 25px;
+    box-sizing: content-boxf;
     padding: 25px;
     width: 200px;
     max-width: 200px;
@@ -24,6 +25,7 @@
     align-items: center;
     text-align: center;
     transition: 0.5s;
+    
 
 }
 

@@ -5,6 +5,9 @@ if (isset($_GET["req"])) {
     if ($req == "app_dashboard") {
         virtual('../html/user_dashboard.html');
     } else if ($req == "app_complaints") {
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/php/login_logout_user.php');
+        require_once('../php/complaint_register.php');
+        complaints_user(get_log_in($_COOKIE["key"]));
         virtual('../html/user_complaints.html');
     } else if ($req == "app_profile") {
         include('../html/profile.html');

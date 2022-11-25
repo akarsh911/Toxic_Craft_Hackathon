@@ -191,22 +191,52 @@ function complaints_user($user_id)
 {
 
     $conn = openCon();
-    $sql = "SELECT department,category,title,x-cord,y-cord,descrip,assigned_id,complaint_date,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE user_id='$user_id' ;";
+    $sql = "SELECT department,category,title,x_cord,y_cord,descrip,assigned_id,complaint_date,complaint_state,resource_url,remarks,remark_url,supervisor_remark,user_feedback FROM `city_complaints` WHERE user_id='$user_id' ;";
     $result = $conn->query($sql);
     if (!$result) {
         echo ("Error description: " . $conn->error);
     }
     $all_comps = array();
     $count = 0;
+    echo "<br>
+    <br><table>";
+    echo "<style>table, th, td {
+  border: 1px solid black;
+}</style>";
+    echo `<tr>
+    <th>department</th>
+    <th>category</th>
+     <th>title</th>
+       <th>description</th>
+       <th>assigned id</th>
+       <th>complaint date</th>
+       <th>Status</th>
+      <th>lat </th>
+      <th>lon </th>
+      
+  </tr><br>`;
     if ($result->num_rows > 0) {
 
         while ($row = $result->fetch_assoc()) {
+            echo `<tr>
+    <th>` . $row['department'] . `</th>
+    <th>` . $row['category'] . `</th>
+     <th>` . $row['title'] . `</th>
+       <th>` . $row['descrip'] . `</th>
+       <th>` . $row['assigned_id'] . `</th>
+       <th>` . $row['complaint_date'] . `</th>
+       <th>` . $row['complaint_state'] . `</th>
+      <th>` . $row['y_cord'] . `</th>
+      <th>` . $row['x_cord'] . `</th>
+      
+  </tr><br>`;
             $count++;
             $all_comps[$count] = $row;
         }
         $myJSON = json_encode($all_comps);
-        echo "<script> sessionStorage.setItem('err_data', `" . json_encode($myJSON, JSON_PRETTY_PRINT) . "`);</script>";
-        echo '<script>window.onload = (event) => {location.replace("../html/onboard.html")};</script>';
+        echo "<script> localStorage.setItem('dashboard_data', `" . $myJSON . "`);</script>";
+
+        return;
     } else {
         return 0;
     }

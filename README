@@ -14,3 +14,5 @@ Clicking on the Login and Register buttons open their respective forms on the sa
 In the content part of the website the first part is a slideshow which shows different images of the beautiful city of Patiala.
 The images have been shown using different links from Google Images. 
 The slideshow has been supported by javascript in the file slideshow.js
+Further the homepage consists of description and history of the City of Patiala which has been written down in html and source of the information is www.google.com
+The homepage also consists of 

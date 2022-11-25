@@ -1,10 +1,10 @@
 var data1=localStorage.getItem("complaints");
 data1=data1.substring(1,data1.length-1);
-const data=JSON.parse(data1);
-if(data!=null)
+var data2=JSON.parse(data1);
+if(data2!=null)
 {
-    alert("");
-    for(var i=1;i<=data.count;i++)
+    
+    for(var i=1;i<=data2.count;i++)
     {
         var dt=document.getElementById("comp_table").innerHTML;
         var x=`<tr>
@@ -12,29 +12,30 @@ if(data!=null)
             `+i+`
         </th>
         <th>
-           `+data[i].title+`
+           `+data2[i].title+`
         </th>
         <th>
-        `+data[i].descrip+`
+        `+data2[i].descrip+`
         </th>
         <th>
-        `+data[i].user_id+`
+        `+data2[i].user_id+`
         </th>
         <th>
-        `+data[i].department+`
+        `+data2[i].department+`
         </th>
         <th>
-        `+data[i].category+`
+        `+data2[i].category+`
         </th>
         <th>
-        `+data[i].complaint_state+`
+        `+data2[i].complaint_state+`
         </th>
         <th>
-        `+data[i].complaint_date+`
+        `+data2[i].complaint_date+`
         </th>
         <th>
-        `+data[i].resource_url+`
+        `+data2[i].resource_url+`
         </th>
     </tr>`;
+    document.getElementById("comp_table").innerHTML=dt+x;
     }
 }

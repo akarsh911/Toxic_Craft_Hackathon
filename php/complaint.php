@@ -34,6 +34,7 @@ if (!check_login()) {
 
             </div>
         </div>
+        <script src="../js/dashboard.js"></script>
         <div class="data_html" id="data_html">
             <?php
             require_once("../php/user_dashboard_data.php");
@@ -42,9 +43,9 @@ if (!check_login()) {
             if ($ds == 0) {
                 require_once("../php/complaint_register.php");
                 $ret = complaints_user($user_mail); ?>
-                < script>
-                    localStorage.setItem('complaints', '"<?php echo $ret; ?>"');
-                    </script>
+            < script>
+                localStorage.setItem('complaints', '"<?php echo $ret; ?>"');
+                </script>
                 <?php
                 include("../html/user_complaints.html");
             } else if ($ds == 1)

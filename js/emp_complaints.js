@@ -36,8 +36,11 @@ if(data2!=null)
         `+data2[i].resource_url+`
         </th>
         <th>
-       <button onclick=location.href(../php/emp_done_change.php?ref=`+data2[i].comp_id+`><i class="fa fa-check" aria-hidden="true"></i></button>
+       <button onclick=location.href(../php/emp_done_change.php?ref=`+data2[i].comp_id+`&i=true><i class="fa fa-check" aria-hidden="true"></i></button>
         </th>
+        <th>
+        <button onclick=location.href(../php/emp_done_change.php?ref=`+data2[i].comp_id+`&i=false><i class="fa fa-times" aria-hidden="true"></i></button>
+         </th>
 
     </tr>`;
     document.getElementById("comp_table").innerHTML=dt+x;

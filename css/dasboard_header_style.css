@@ -11,7 +11,7 @@ body {
 
 
 .top_bar {
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(255, 255, 255);
     padding: 2vh;
     height: 8vh;
     width: 100%;
@@ -32,6 +32,7 @@ body {
     font-size: 24px;
     color: rgb(0, 0, 0);
     padding-right: 14px;
+    
 }
 
 .icon:hover {
@@ -120,7 +121,7 @@ body {
 
 .popup_box_profile {
     z-index: 10;
-    background-color: rgb(255, 253, 246);
+    background-color: rgb(255, 255, 255);
     min-width: 450px;
     min-height: 200px;
     right: 3%;

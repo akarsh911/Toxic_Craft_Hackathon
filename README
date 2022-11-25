@@ -1,4 +1,18 @@
 SMART CITIES
 Problem Statement: 
 Innovative Governance: A platform for Governments to bring better services, Transparency, Accountability, and Data-driven decisions.
-The basic idea of our projectis to 
+The basic idea of our project is to bring forward a platform from where users can raise their issues directly to the authorities and get them resolved with absolute accountability and transparency from the Government's front. 
+To assist the above mentioned task, we bring forth a website capable of being viewed on a PC as well as a mobile phone.
+The detailed description of the website is as follows:
+1) HOMEPAGE:
+The first thing in the Homepage is the logo of the website which is the map of Patiala City,Punjab inside a light bulb.
+Second thing present in the header is the name of the site which in this case has been named after the name of the Hackathon-"Smart Punjab".
+The above mentioned things have been followed by the Login and Register buttons for the users followed by the logo of 150 years of Charkha used by Mahatma Gandhi.
+The name of the website has been linked to the homepage of the website using href attribute in html.
+The same applies for the logo.
+Clicking on the Login and Register buttons open their respective forms on the same tab.
+In the content part of the website the first part is a slideshow which shows different images of the beautiful city of Patiala.
+The images have been shown using different links from Google Images. 
+The slideshow has been supported by javascript in the file slideshow.js
+Further the homepage consists of description and history of the City of Patiala which has been written down in html and source of the information is www.google.com
+The homepage also consists of 

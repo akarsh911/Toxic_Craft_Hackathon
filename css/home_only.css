@@ -83,6 +83,11 @@
     border: #636804;
     cursor: pointer;
 }
+.container
+{
+    padding-left: 300px;
+    padding-right: 400px;
+}
 
 @media screen and (min-width:400px) and (max-width:700px) {
     .top_bar {
@@ -155,4 +160,5 @@
         border-radius: 25px;
         margin-right: 0px;
     }
+
 }

@@ -5,7 +5,7 @@ if(data!=null)
 {
     
     for(var i=1;i<=data.count;i++)
-    {alert("");
+    {
         var dt=document.getElementById("comp_table").innerHTML;
         var x=`<tr>
         <th>

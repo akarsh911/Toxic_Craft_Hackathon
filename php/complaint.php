@@ -1,3 +1,4 @@
+
 <?php
 require_once('../php/script_check_login.php');
 if (!check_login()) {
@@ -7,7 +8,7 @@ if (!check_login()) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<script src="../js/dashboard.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,6 +50,7 @@ if (!check_login()) {
                 else if ($ds == 1)
                     include("../html/admin_complaints.html"); ?>
         </div>
+        
 </body>
 
 </html>

@@ -21,4 +21,10 @@ The lower part of the page consists of page consists of icons which directs to t
 The icons have been insterted using the icons from the website https://fontawesome.com/v4/icons/.
 The javascript code of the icons have been inserted in the <head> tag of the html
 2)Register Form page:
+The first thing in the Register webpage is the logo of the website which is the map of Patiala City,Punjab inside a light bulb.
+Second thing present in the header is the name of the site which in this case has been named after the name of the Hackathon-"Smart Punjab".
+The above mentioned things have been followed by the Login and Register buttons for the users followed by the logo of 150 years of Charkha used by Mahatma Gandhi.
+The name of the website has been linked to the homepage of the website using href attribute in html.
+The same applies for the logo.
 The header and footer have been linked to home_page.css which are contained in the files header_style.css and css of footer is intext contained in the file footer_home_page.html
+The background of the <body> attribute consists of the image of the 

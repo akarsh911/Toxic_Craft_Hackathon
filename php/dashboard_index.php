@@ -25,12 +25,14 @@ if (!check_login()) {
             <div class="navigation_bar">
                 <?php
                 require_once("../php/user_dashboard_data.php");
-                $user_mail=get_log_in($_COOKIE["key"]);
-                $ds=get_dashboard_type($user_mail);
-            if($ds==0)
-                include("../html/user_nav.html");
-                else if($ds==1)
-                include("../html/admin_nav.html"); ?>
+                $user_mail = get_log_in($_COOKIE["key"]);
+                $ds = get_dashboard_type($user_mail);
+                if ($ds == 0)
+                    include("../html/user_nav.html");
+                else if ($ds == 1)
+                    include("../html/admin_nav.html");
+                else if ($ds == 2)
+                    include("../html/emp_nav.html"); ?>
             </div>
         </div>
 

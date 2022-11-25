@@ -32,7 +32,7 @@ if (!check_login()) {
                 else if ($ds == 1)
                     include("../html/admin_nav.html");
                 else if ($ds == 2)
-                    include("../html/employee_nav.html"); ?>
+                    include("../html/emp_nav.html"); ?>
 
             </div>
         </div>
@@ -52,14 +52,14 @@ if (!check_login()) {
                 include("../html/user_complaints.html");
             } else if ($ds == 1) {
                 require_once("../php/complaint_register.php");
-                $ret = complaints_emp($user_mail); ?>
+                $ret = complaints_admin(); ?>
                 <script>
                     localStorage.setItem('complaints', '"<?php echo $ret; ?>"');
                 </script>
             <?php
             } else if ($ds == 2) {
                 require_once("../php/complaint_register.php");
-                $ret = complaints_admin($user_mail); ?>
+                $ret = complaints_user($user_mail); ?>
                 <script>
                     localStorage.setItem('complaints', '"<?php echo $ret; ?>"');
                 </script>

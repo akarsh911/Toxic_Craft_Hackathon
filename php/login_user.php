@@ -16,7 +16,7 @@ $username = trim($_POST["username"], '\'"');
 $password = trim($_POST["password"], '\'"');
 $username = get_email($username);
 $resp = login($username, $password);
-if ($resp == 0) {
+if ($resp == "nf") {
     $err = array();
     $err["val"] = "Invalid Credentials";
     echo "<script> sessionStorage.setItem('err', `" . json_encode($err, JSON_PRETTY_PRINT) . "`);</script>";

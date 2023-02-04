@@ -51,7 +51,7 @@ function login($email, $psw_hash)
             return $row["f_name"];
         }
     } else {
-        return 0;
+        return "nf";
     }
 }
 
